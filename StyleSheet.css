@@ -1,0 +1,141 @@
+﻿body {
+    margin: 0;
+    font-family: "Source Sans Pro", 'Roboto Slab';
+    background-color: #999999;
+    /*background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(34,100,117,1) 0%, rgba(107,193,245,1) 0%, rgba(197,243,255,1) 100%);*/
+}
+
+.container {
+    margin: 20px auto;
+    max-width: 960px; /*K đặt cố định width, vì sẽ ko resize khi thay đổi size màn hình*/
+    /*border-radius: 15px;*/
+   border:15px solid #fff; 
+    box-shadow: rgba(0, 0, 0, 0.34) 0px 10px 15px;
+    background-color: #e4f8fa;
+}
+
+.header {
+    /*height: 90px; khi resize, link bị khuất phía dưới nếu đặt= 90, đặt = 100 ko sao, ko đặt gì thì
+        height sẽ cao hơn để hiển thị được menu    */
+    padding: 0 45px;
+    /* border-top-left-radius: 15px;
+    border-top-right-radius: 15px;*/
+    /*background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(7,26,145,1) 0%, rgba(36,106,217,1) 100%);*/
+    background-color: #2572c8;
+    color: #fff;
+    display: flex;
+    justify-content: space-between; /*Làm cho khối link dịch sang phải, căn đều hai bên*/
+    align-items: center; /*Làm cho khối link dịch ra giữa theo chiều vertical (giữa dòng)*/
+    flex-wrap: wrap; /*làm cho khối menu di chuyển xuống dưới nếu ko đủ width khi thu nhỏ screen*/
+}
+
+.nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /*Làm cho các link lên trên 1 hàng*/
+}
+
+    .nav li {
+        margin-left: 20px; /*Làm cho mỗi li cách nhau 20px*/
+    }
+
+    .nav a {
+        color: #fff;
+        text-decoration: none;
+        padding: 5px 10px;
+      
+       
+    }
+
+        .nav a:hover {
+            color: #fff;
+            text-decoration: none;
+            background-color: #fff;
+            color: blue;
+        }
+
+.sidebar {
+    width: 30%;
+    float: right;
+}
+
+.content h1 {
+    font-family: "Source Sans Pro", 'Roboto Slab';
+    font-size: 1.5rem;
+    color: #2572c8;
+    border-bottom: 1px dashed #ccc;
+     
+}
+
+.sidebar h2 {
+    font-family: "Source Sans Pro", 'Roboto Slab';
+    font-size: 1.2rem;
+    color: #2572c8;
+    padding: 3px;
+    text-align: center;
+    /*    border-bottom: 1px dashed blue;
+    border-top: 1px dashed blue;*/
+    background-color: #a5dff1;
+}
+
+.sidebar-inner {
+    margin-top: 15px;
+    margin-right: 10px;
+    padding: 10px 20px;
+    background-color: #b7e6f5;
+}
+
+    .sidebar-inner li {
+        border-bottom: 1px solid #e6effc;
+        list-style: outside;
+        margin-right: 20px; /*cho đường kẻ ngắn lại*/
+        padding: 5px 0;
+
+    }
+
+        .sidebar-inner li a {
+            display: inline-block;
+            text-decoration: none;
+            color: #000;
+            border-bottom: 1px dashed groove;
+
+        }
+
+            .sidebar-inner li a:hover {
+                color: #2572c8;
+                font-weight: bold;
+            }
+
+.content {
+    width: 70%; /*Nếu đặt cụ thể con số thì sẽ ko resize khi thay đổi width*/
+    float: left;
+}
+
+.content-inner {
+    padding: 20px; /*Đặt rời ra, bên trong content padding được tính là của khối bên trong, 
+        không bị tính vào 70% của khối bên ngoài -> không bị tràn xuốn*/
+}
+
+.button {
+    background-color: #2572c8; 
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 20px;
+    border-radius: 8px;
+    /* display:block; /*Sẽ làm block cho cả dòng luôn vì không có width*/
+    display: inline-block;
+}
+
+.img-resize {
+    width: 240px; /*ảnh ko thay đổi khi resize screen*/
+    height: auto;
+}
+
+.footer {
+    clear: both;
+    text-align: center;
+    padding: 20px 0;
+    color: #999;
+    font-size: .9rem;
+}

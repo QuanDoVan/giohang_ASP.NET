@@ -1,0 +1,63 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="DoVanQuan_2019600274.Site1" %>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        <asp:ContentPlaceHolder ID="tieude" runat="server"></asp:ContentPlaceHolder>
+    </title>
+    <link rel="stylesheet" href="StyleSheet.css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="container">
+        <div class="header">
+            <h1>Đỗ Văn Quân</h1>
+            <ul class="nav">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Porfolio</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="content-inner">
+                <asp:ContentPlaceHolder ID="noidung" runat="server"></asp:ContentPlaceHolder>
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="sidebar-inner">
+                <h2>About Me</h2>
+
+                <img class="img-resize" src="b11.jpg" />
+                <h2>Danh mục</h2>
+                <ul>
+                    <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
+                        <ItemTemplate>
+                            <li>
+                                <a href="danhmucsp.aspx?MaDanhmuc=<%# Eval("MaDanhmuc") %>"><%# Eval("TenDanhmuc") %></a>
+                            </li>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:QLSanpham2ConnectionString %>" SelectCommand="SELECT * FROM [Danhmuc]"></asp:SqlDataSource>
+                </ul>
+                <h2>Lưu trữ</h2>
+                <ul>
+                    <li>
+                    <a href="danhsachsp.aspx">Danh sách sản phẩm</a>
+                        </li>
+                    <li>
+                        <a href="muahang.aspx">Giỏ hàng</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Bài thi kết thúc học phần</p>
+        </div>
+    </div>
+    </form>
+</body>
+</html>
+
+
